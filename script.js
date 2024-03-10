@@ -3,34 +3,34 @@ let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognitio
 let isListening = false;
 
 recognition.onresult = function(event) {
-    performSearch(event.results[0][0].transcript);
+    let transcript = event.results[0][0].transcript;
+    performSearch(transcript);
 };
 
 recognition.onend = function() {
     if (isListening) {
-        isListening = false;
-        resetButton();
+        toggleListening();
     }
 };
 
 searchButton.addEventListener('click', function() {
     if (!isListening) {
-        isListening = true;
-        searchButton.classList.add('recording');
-        searchButton.innerText = 'Record';
-        recognition.start();
-    } else {
-        recognition.stop();
+        toggleListening();
     }
 });
 
-function performSearch(query) {
-    searchButton.classList.add('searching');
-    searchButton.innerText = 'Searching...';
-    window.open(`https://google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+function toggleListening() {
+    if (!isListening) {
+        isListening = true;
+        searchButton.innerText = 'Record';
+        recognition.start();
+    } else {
+        isListening = false;
+        searchButton.innerText = 'Search';
+        recognition.stop(); // Stop recording
+    }
 }
 
-function resetButton() {
-    searchButton.classList.remove('recording', 'searching');
-    searchButton.innerText = 'Search';
+function performSearch(query) {
+    window.open(`https://google.com/search?q=${encodeURIComponent(query)}`, '_blank');
 }
