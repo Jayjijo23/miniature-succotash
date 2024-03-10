@@ -1,60 +1,43 @@
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Aesthetic and widely supported font */
+    font-family: 'Arial', sans-serif; /* This should be consistent with the rest of your site */
     text-align: center; /* Center align everything in the body */
-    padding-top: 100px; /* Increased padding to top for more space */
-    background-color: #f5f5f5; /* A light grey background */
+    padding-top: 100px; /* Or whatever value gives you the desired space */
+    background-color: #f5f5f5; /* This should match the color of your site background */
 }
 
 h1 {
-    color: #333; /* Dark grey color for the title text */
-    margin-bottom: 100px; /* Increased space between the title and the button */
-    font-size: 48px; /* Large font size for the title */
-    font-weight: 300; /* Lighter font weight for a modern, clean look */
-    line-height: 1.2; /* Adjust line height for better readability */
+    color: #333; /* Assuming you want to keep the title color dark */
+    margin-bottom: 100px; /* Adjust as necessary for space */
+    font-size: 48px; /* Or the size that fits your design */
+    font-weight: bold; /* Makes the font bold */
+    line-height: 1.2;
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #ffd700; /* A golden color */
     border: none;
     color: white;
-    padding: 20px 40px; /* Larger padding for a bigger button */
+    padding: 20px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 24px; /* Larger font size for the text on the button */
+    font-size: 24px;
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 5px; /* Slightly rounded corners for the button */
-    transition: all 0.3s ease; /* Smooth transition for changes */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 button:hover {
-    background-color: #45a049; /* Darker shade of green for hover state */
-    box-shadow: 0 6px 12px rgba(0,0,0,0.2); /* Larger shadow on hover for a "lifting" effect */
-    transform: translateY(-2px); /* Slightly raise the button on hover */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
 }
 
 button:active {
-    transform: translateY(-1px); /* Slightly lower the button when pressed */
+    transform: translateY(-1px);
 }
 
 button.recording {
-    background-color: #f44336; /* Red */
-}
-
-/* Responsive design adjustments */
-@media (max-width: 768px) {
-    body {
-        padding-top: 50px; /* Less top padding for small screens */
-    }
-
-    h1 {
-        font-size: 32px; /* Smaller font size for the title */
-    }
-
-    button {
-        padding: 15px 30px; /* Smaller padding for the button */
-        font-size: 20px; /* Smaller font size for the text on the button */
-    }
+    background-color: #808080; /* A grey color */
 }
