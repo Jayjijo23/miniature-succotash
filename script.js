@@ -6,19 +6,17 @@ recognition.onstart = function() {
     isListening = true;
     searchButton.classList.add('recording');
     searchButton.innerText = 'Record';
-    searchButton.style.backgroundColor = '#f44336'; // Turn the button red
-};
-
-recognition.onend = function() {
-    isListening = false;
-    searchButton.classList.remove('recording');
-    searchButton.style.backgroundColor = ''; // Reset the button color
-    searchButton.innerText = 'Search';
 };
 
 recognition.onresult = function(event) {
     let transcript = event.results[0][0].transcript;
     performSearch(transcript);
+};
+
+recognition.onend = function() {
+    isListening = false;
+    searchButton.classList.remove('recording');
+    searchButton.innerText = 'Search';
 };
 
 searchButton.addEventListener('click', function() {
@@ -31,4 +29,6 @@ searchButton.addEventListener('click', function() {
 
 function performSearch(query) {
     window.open(`https://google.com/search?q=${encodeURIComponent(query)}`, '_blank');
+    searchButton.innerText = 'Search';
+    searchButton.classList.remove('recording');
 }
