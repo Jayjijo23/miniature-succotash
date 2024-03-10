@@ -1,35 +1,28 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    text-align: center; /* Center align everything in the body */
+    padding-top: 50px; /* Add padding to top for some space */
+}
+
+h1 {
+    color: #333; /* Dark grey color for the title text */
+    margin-bottom: 20px; /* Space between the title and the button */
 }
 
 button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 20px 40px; /* Larger padding for a bigger button */
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 24px; /* Larger font size for the text on the button */
     margin: 4px 2px;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-button:not(.searching):hover {
-    background-color: #45a049;
+    border-radius: 5px; /* Slightly rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
 }
 
 button.recording {
     background-color: #f44336; /* Red */
-}
-
-button.searching {
-    background-color: #008CBA; /* Blue */
-    pointer-events: none; /* Disables button clicks when searching */
 }
